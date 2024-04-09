@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024_02_Credit Inquiry</title>
+</head>
+<body>
+<h1>2024년도 2학기 수강신청 과목입니다.</h1>
+<table border="1">
+    <tr>
+        <th>년도</th>
+        <th>학기</th>
+        <th>교과목명</th>
+        <th>교과구분</th>
+        <th>담당교수</th>
+        <th>학점</th>
+    </tr>
+    <tr th:each="data : ${course}">
+        <td th:text="${data.year}"></td>
+        <td th:text="${data.semester}"></td>
+        <td th:text="${data.courseName}"></td>
+        <td th:text="${data.courseType}"></td>
+        <td th:text="${data.professor}"></td>
+        <td th:text="${data.credit}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Inquiry</title>
+</head>
+<body>
+<h1>Credit Inquiry</h1>
+<table border="1">
+    <tr>
+        <th>년도</th>
+        <th>학기</th>
+        <th>총 학점</th>
+    </tr>
+    <tr th:each="dto : ${sendYearSemesterDTO}">
+        <td th:text="${dto.year}"></td>
+        <td th:text="${dto.semester}"></td>
+        <td th:text="${dto.creditSum}"></td>
+        <td>
+            <a th:href="@{/credit-inquiry/detail(year=${dto.year}, semester=${dto.semester})}">상세 정보 보기</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">총계</td>
+        <td th:text="${totalCredit}"></td>
+        <td></td>
+    </tr>
+</table>
+<a href="/logout">로그아웃</a>
+
+</body>
+</html>

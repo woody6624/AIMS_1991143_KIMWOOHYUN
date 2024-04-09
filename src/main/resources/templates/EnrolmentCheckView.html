@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학년별 이수 학점 조회</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>학년별 이수 학점 조회</h2>
+
+<table>
+    <tr>
+        <th>학년</th>
+        <th>년도</th>
+        <th>학기</th>
+        <th>취득 학점</th>
+        <th>상세보기</th>
+    </tr>
+    <tr th:each="grade : ${grades}">//each문을 순회하면서..
+        <td th:text="${grade.year}"></td>
+        <td th:text="${grade.year}"></td>
+        <td th:text="${grade.semester}"></td>
+        <td th:text="${grade.credit} + '학점'"></td>
+        <td><a th:href="'상세보기 링크 URL'" th:text="'상세보기'"></a></td>
+    </tr>
+</table>
+
+</body>
+</html>
