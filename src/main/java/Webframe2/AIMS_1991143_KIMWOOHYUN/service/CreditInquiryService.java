@@ -105,4 +105,17 @@ public class CreditInquiryService {//학년별 이수 학점 조회
         return courseEntity;
     }
 
+    public void create_2024_myCourse(String courseName,String courseType,String professor,int credit) {
+        CourseEntity courseEntity=new CourseEntity();
+        courseEntity.setYear(2024);
+        courseEntity.setSemester(2);
+        courseEntity.setCourseCode("");  //교과코드는 없는듯
+        courseEntity.setCourseName(courseName);
+        courseEntity.setCourseType(courseType);
+        courseEntity.setProfessor(professor);
+        courseEntity.setCredit(credit);
+
+        courseRepository.save(courseEntity);
+
+    }
 }

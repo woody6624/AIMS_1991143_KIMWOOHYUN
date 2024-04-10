@@ -6,9 +6,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.antlr.v4.runtime.misc.NotNull;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 @Data
 @RequiredArgsConstructor
 public class UserEntity {
@@ -17,6 +18,7 @@ public class UserEntity {
     private String userName;
 
     @Column(name = "email")
+    @NotNull
     private String email;
 
     @Column(name = "password")

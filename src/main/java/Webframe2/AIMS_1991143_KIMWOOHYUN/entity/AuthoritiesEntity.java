@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Entity
-@Table(name = "Authorities")
+@Table(name = "authorities")
 @Data
 @RequiredArgsConstructor
 public class AuthoritiesEntity {//스프링 시큐리티의 인증을 위한 테이블

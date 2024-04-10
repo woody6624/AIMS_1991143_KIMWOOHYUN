@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @Entity
-@Table(name = "Course")
+@Table(name = "course")
 @Data
 @RequiredArgsConstructor
 public class CourseEntity {

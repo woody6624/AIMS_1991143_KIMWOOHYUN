@@ -20,7 +20,7 @@ configurations {
 repositories {
 	mavenCentral()
 }
-
+//스프링 시큐리티 버전 6를 사용하였습니다.
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'

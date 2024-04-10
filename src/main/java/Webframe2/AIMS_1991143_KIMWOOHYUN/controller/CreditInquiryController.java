@@ -44,9 +44,24 @@ public class CreditInquiryController {
     public String get_2024_02_courses(Model model) {
         List<CourseEntity> courses = creditInquiryService.getCreditInquiry(2024,2);
         model.addAttribute("course", courses);
-        return "CreditInquiryDetail"; // credit-inquiry.html로 이동
+        return "2024_02_CreditInquiry"; // credit-inquiry.html로 이동
     }
 
+    @GetMapping("/go")
+    public String gotoInquiryForm(){
+        return "CreditInquiryGo";
+    }
+
+
+    //수강신청하는 컨트롤러
+    @PostMapping("/submitGoCreditInquiryForm")
+    public String inquiryCourse(@RequestParam("courseName") String courseName,
+                                @RequestParam("courseType") String courseType,
+                                @RequestParam("professor") String professor,
+                                @RequestParam("credit") int credit){
+        creditInquiryService.create_2024_myCourse(courseName,courseType,professor,credit);
+        return "redirect:/";
+    }
 
 
 }

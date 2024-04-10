@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>안녕~</title>
+</head>
+<body>
+<form action="submitGoCreditInquiryForm" method="post" name="courseForm">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <!-- 사용자 입력 부분입니다. -->
+    <label for="courseName">Course Name:</label>
+    <input id="courseName" type="text" th:name="courseName" placeholder="Enter course name"/>
+    <br>
+
+    <label for="courseType">Course Type:</label>
+    <input id="courseType" type="text" th:name="courseType" placeholder="Enter course type"/>
+    <br>
+
+    <label for="professor">Professor:</label>
+    <input id="professor" type="text" th:name="professor" placeholder="Enter professor name"/>
+    <br>
+
+    <label for="credit">Credit:</label>
+    <input id="credit" type="text" th:name="credit" placeholder="Enter credit"/>
+    <br>
+
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>
