@@ -2,29 +2,41 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>안녕~</title>
+    <title>수강 신청</title>
 </head>
 <body>
-<form action="submitGoCreditInquiryForm" method="post" name="courseForm">
+<form action="submitGoCreditInquiryForm" method="post" name="courseForm" th:object="${courseFormDTO}">
     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
     <!-- 사용자 입력 부분입니다. -->
-    <label for="courseName">Course Name:</label>
-    <input id="courseName" type="text" th:name="courseName" placeholder="Enter course name"/>
+    <label for="courseCode">교과코드:</label>
+    <input id="courseCode" type="text" th:field="*{courseCode}" class="form-control" placeholder="Enter course code"/>
+    <p th:if="${#fields.hasErrors('courseCode')}" th:text="${#fields.errors('courseCode')}" class="fieldError"></p>
     <br>
 
-    <label for="courseType">Course Type:</label>
-    <input id="courseType" type="text" th:name="courseType" placeholder="Enter course type"/>
+    <label for="courseName">교과목명:</label>
+    <input id="courseName" type="text" th:field="*{courseName}" class="form-control" placeholder="Enter course name"/>
+    <p th:if="${#fields.hasErrors('courseName')}" th:text="${#fields.errors('courseName')}" class="fieldError"></p>
     <br>
 
-    <label for="professor">Professor:</label>
-    <input id="professor" type="text" th:name="professor" placeholder="Enter professor name"/>
+    <label for="courseType">교과구분:</label>
+    <input id="courseType" type="text" th:field="*{courseType}" class="form-control" placeholder="Enter course type"/>
+    <p th:if="${#fields.hasErrors('courseType')}" th:text="${#fields.errors('courseType')}" class="fieldError"></p>
     <br>
 
-    <label for="credit">Credit:</label>
-    <input id="credit" type="text" th:name="credit" placeholder="Enter credit"/>
+    <label for="professor">담당교수:</label>
+    <input id="professor" type="text" th:field="*{professor}" class="form-control" placeholder="Enter professor name"/>
+    <p th:if="${#fields.hasErrors('professor')}" th:text="${#fields.errors('professor')}" class="fieldError"></p>
     <br>
 
-    <input type="submit" value="Submit"/>
+    <label for="credit">학점:</label>
+    <input id="credit" type="text" th:field="*{credit}" class="form-control" placeholder="Enter credit"/>
+    <p th:if="${#fields.hasErrors('credit')}" th:text="${#fields.errors('credit')}" class="fieldError"></p>
+    <br>
+
+    <input type="submit" value="수강 신청 하기"/>
 </form>
+<a href="/logout">로그아웃</a>
+
 </body>
 </html>
+

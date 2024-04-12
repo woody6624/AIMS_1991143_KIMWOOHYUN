@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credit Inquiry Detail</title>
+    <title>상세보기 페이지</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-<h1>Credit Inquiry Detail</h1>
+<h1>상세보기</h1>
 <table>
     <tr>
         <th>년도</th>
@@ -25,5 +45,7 @@
         <td th:text="${data.credit}"></td>
     </tr>
 </table>
+<a href="/logout">로그아웃</a>
+
 </body>
 </html>

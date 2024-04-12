@@ -6,8 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.antlr.v4.runtime.misc.NotNull;
-
+//DB에서 user테이블에 해당하는 엔티티입니다.
 @Entity
 @Table(name = "user")
 @Data
@@ -18,7 +17,6 @@ public class UserEntity {
     private String userName;
 
     @Column(name = "email")
-    @NotNull
     private String email;
 
     @Column(name = "password")

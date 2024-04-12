@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+//DB에서 authorities테이블에 해당하는 엔티티입니다.
 
 @Entity
 @Table(name = "authorities")

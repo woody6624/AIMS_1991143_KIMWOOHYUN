@@ -18,6 +18,7 @@ public class UserCheckDTO implements UserDetails {
         this.password=password;
     }
 
+    //사용자가 가진 권한을 나타내는 GrantedAuthority Collection을 생성해줍니다.그리고 리턴해줍니다.
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() { //권한을 리턴해줍니다.
         Collection<GrantedAuthority> collection=new ArrayList<>();
@@ -40,22 +41,22 @@ public class UserCheckDTO implements UserDetails {
     public String getUsername() {
         return username;
     }
-
+    //계정 만료 여부 확인
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
-
+    //계정 잠김 여부 확인
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
-
+    //사용자 자격 증명 만료 여부 확인
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
-
+    //사용자 계정 활성 여부 확인
     @Override
     public boolean isEnabled() {
         return true;
